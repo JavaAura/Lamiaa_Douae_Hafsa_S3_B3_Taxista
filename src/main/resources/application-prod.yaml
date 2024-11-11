@@ -1,0 +1,16 @@
+# src/main/resources/application-prod.yaml
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/taxi_db_prod
+    driver-class-name: org.postgresql.Driver
+    username: your_prod_db_user
+    password: your_prod_db_password
+  jpa:
+    hibernate:
+      ddl-auto: none   # Avoid auto updates; use migrations like Liquibase instead
+    show-sql: false
+
+logging:
+  level:
+    root: WARN

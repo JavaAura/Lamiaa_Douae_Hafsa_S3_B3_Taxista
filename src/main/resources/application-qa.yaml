@@ -1,0 +1,17 @@
+# src/main/resources/application-qa.yaml
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/taxi_db_qa
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: your_qa_db_user
+    password: your_qa_db_password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework: DEBUG

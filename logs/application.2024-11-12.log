@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2024-11-12 10:15:44 - Starting TaxistaApplication using Java 1.8.0_422-422 on DESKTOP-KCR8P9P with PID 14668 (C:\Users\douae\IdeaProjects\taxista\target\classes started by douae in C:\Users\douae\IdeaProjects\taxista)
 2024-11-12 10:15:44 - HV000001: Hibernate Validator 6.2.5.Final
 2024-11-12 10:15:44 - The following 1 profile is active: "dev"
@@ -16579,3 +16580,189 @@ Unconditional classes:
 2024-11-12 16:41:12 - Writing [{timestamp=Tue Nov 12 16:41:12 WEST 2024, status=404, error=Not Found, message=No message available, (truncated)...]
 2024-11-12 16:41:12 - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
 2024-11-12 16:41:12 - Exiting from "ERROR" dispatch, status 404
+=======
+2024-11-12 17:27:14 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-12 17:27:14 - Initializing Servlet 'dispatcherServlet'
+2024-11-12 17:27:14 - Detected StandardServletMultipartResolver
+2024-11-12 17:27:14 - Detected AcceptHeaderLocaleResolver
+2024-11-12 17:27:14 - Detected FixedThemeResolver
+2024-11-12 17:27:14 - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@532e4ab7
+2024-11-12 17:27:14 - Detected org.springframework.web.servlet.support.SessionFlashMapManager@692704da
+2024-11-12 17:27:14 - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-12 17:27:14 - Completed initialization in 0 ms
+2024-11-12 17:27:14 - POST "/api/drivers", parameters={}
+2024-11-12 17:27:15 - Mapped to com.taxi.taxista.controller.DriverController#createDriver(DriverDTO)
+2024-11-12 17:27:15 - Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-11-12 17:27:15 - Read "application/json;charset=UTF-8" to [DriverDTO(status=AVAILABLE, availabilityStart=08:00, availabilityEnd=18:00)]
+2024-11-12 17:27:15 - Received DriverDTO: DriverDTO(status=AVAILABLE, availabilityStart=08:00, availabilityEnd=18:00)
+2024-11-12 17:27:15 - Found thread-bound EntityManager [SessionImpl(1491213097<open>)] for JPA transaction
+2024-11-12 17:27:15 - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2024-11-12 17:27:15 - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@4c045e72]
+2024-11-12 17:27:15 - Not strongly caching class [com.taxi.taxista.entity.Driver] because it is not cache-safe
+2024-11-12 17:27:15 - Initiating transaction rollback
+2024-11-12 17:27:15 - Rolling back JPA transaction on EntityManager [SessionImpl(1491213097<open>)]
+2024-11-12 17:27:15 - Not closing pre-bound JPA EntityManager after transaction
+2024-11-12 17:27:15 - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-11-12 17:27:15 - Failed to complete request: javax.validation.ConstraintViolationException: Validation failed for classes [com.taxi.taxista.entity.Driver] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='status cannot be null', propertyPath=status, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='status cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='availabilityStart cannot be null', propertyPath=availabilityStart, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='availabilityStart cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='Lastname cannot be null', propertyPath=lastname, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='Lastname cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='availabilityEnd cannot be null', propertyPath=availabilityEnd, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='availabilityEnd cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='Firstname cannot be null', propertyPath=firstname, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='Firstname cannot be null'}
+]
+2024-11-12 17:27:15 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.ConstraintViolationException: Validation failed for classes [com.taxi.taxista.entity.Driver] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='status cannot be null', propertyPath=status, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='status cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='availabilityStart cannot be null', propertyPath=availabilityStart, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='availabilityStart cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='Lastname cannot be null', propertyPath=lastname, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='Lastname cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='availabilityEnd cannot be null', propertyPath=availabilityEnd, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='availabilityEnd cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='Firstname cannot be null', propertyPath=firstname, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='Firstname cannot be null'}
+]] with root cause
+javax.validation.ConstraintViolationException: Validation failed for classes [com.taxi.taxista.entity.Driver] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='status cannot be null', propertyPath=status, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='status cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='availabilityStart cannot be null', propertyPath=availabilityStart, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='availabilityStart cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='Lastname cannot be null', propertyPath=lastname, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='Lastname cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='availabilityEnd cannot be null', propertyPath=availabilityEnd, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='availabilityEnd cannot be null'}
+	ConstraintViolationImpl{interpolatedMessage='Firstname cannot be null', propertyPath=firstname, rootBeanClass=class com.taxi.taxista.entity.Driver, messageTemplate='Firstname cannot be null'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:140)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:80)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.preInsert(EntityIdentityInsertAction.java:188)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:78)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:329)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:286)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:192)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:122)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:756)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:742)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362)
+	at com.sun.proxy.$Proxy114.persist(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:315)
+	at com.sun.proxy.$Proxy114.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:666)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:530)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:286)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:640)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:76)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:241)
+	at com.sun.proxy.$Proxy120.save(Unknown Source)
+	at com.taxi.taxista.service.DriverService.saveDriver(DriverService.java:33)
+	at com.taxi.taxista.service.DriverService$$FastClassBySpringCGLIB$$251b8fe5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:123)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
+	at com.taxi.taxista.service.DriverService$$EnhancerBySpringCGLIB$$99a52726.saveDriver(<generated>)
+	at com.taxi.taxista.controller.DriverController.createDriver(DriverController.java:32)
+	at com.taxi.taxista.controller.DriverController$$FastClassBySpringCGLIB$$a2831b67.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:123)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
+	at com.taxi.taxista.controller.DriverController$$EnhancerBySpringCGLIB$$92660aec.createDriver(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2024-11-12 17:27:15 - "ERROR" dispatch for POST "/error", parameters={}
+2024-11-12 17:27:15 - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-11-12 17:27:15 - Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-11-12 17:27:15 - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2024-11-12 17:27:15 - Writing [{timestamp=Tue Nov 12 17:27:15 WEST 2024, status=500, error=Internal Server Error, trace=javax.valid (truncated)...]
+2024-11-12 17:27:15 - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-11-12 17:27:15 - Exiting from "ERROR" dispatch, status 500
+>>>>>>> 606c6f1fea2285c48637495f109c1f7d821726bd

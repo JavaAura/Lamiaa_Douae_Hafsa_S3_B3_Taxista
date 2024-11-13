@@ -39,6 +39,7 @@ public class DriverService {
         Driver existingDriver = driverRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Driver not found: " + id));
         driverMapper.updateEntityFromDTO(updatedDriverDTO, existingDriver);
+        existingDriver.setId(id);
         Driver savedDriver = driverRepository.save(existingDriver);
         return driverMapper.toDTO(savedDriver);
     }

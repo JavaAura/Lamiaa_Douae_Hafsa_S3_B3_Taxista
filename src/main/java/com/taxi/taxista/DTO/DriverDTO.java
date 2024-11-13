@@ -1,9 +1,11 @@
 package com.taxi.taxista.DTO;
 
+import com.taxi.taxista.entity.enums.DriverStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
 import java.time.LocalTime;
 
 @Data
@@ -11,7 +13,12 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class DriverDTO extends UserDTO{
 
-    private String status;
+    @NotNull(message = "status cannot be null")
+    private DriverStatus status;
+
+    @NotNull(message = "availabilityStart cannot be null")
     private LocalTime availabilityStart;
+
+    @NotNull(message = "availabilityEnd cannot be null")
     private LocalTime availabilityEnd;
 }

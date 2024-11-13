@@ -19,14 +19,14 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class Driver extends User {
 
-    @NotNull
+    @NotNull(message = "status cannot be null")
     @Enumerated(EnumType.STRING)
     private DriverStatus status;
 
-    @NotNull
+    @NotNull(message = "availabilityStart cannot be null")
     private LocalTime availabilityStart;
 
-    @NotNull
+    @NotNull(message = "availabilityEnd cannot be null")
     private LocalTime availabilityEnd;
 
 }

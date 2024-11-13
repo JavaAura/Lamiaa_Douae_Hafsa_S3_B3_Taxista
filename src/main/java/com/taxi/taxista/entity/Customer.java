@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 @Data
 @DiscriminatorValue("CUSTOMER")
 @AllArgsConstructor
-@NoArgsConstructor
+
+//@NoArgsConstructor(force = true)
 public class Customer extends  User {
 }

@@ -1,23 +1,26 @@
 package com.taxi.taxista.controller;
 
-import com.taxi.taxista.DTO.CustomerDTO;
 import com.taxi.taxista.DTO.DriverDTO;
-import com.taxi.taxista.service.CustomerService;
+
 import com.taxi.taxista.service.DriverService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
+import lombok.extern.slf4j.Slf4j;
 import javax.validation.Valid;
 import java.util.List;
-
+//@Slf4j
 @RestController
 @RequestMapping("/api/drivers")
-@Validated
+
 public class DriverController {
 
     private final DriverService driverService;
+    private static final Logger logger = LoggerFactory.getLogger(DriverService.class);
+
     @Autowired
     public DriverController(DriverService driverService) {
         this.driverService = driverService;
@@ -25,7 +28,9 @@ public class DriverController {
 
     @PostMapping
     public ResponseEntity<DriverDTO> createDriver(@Valid @RequestBody DriverDTO driverDTO) {
+        logger.info("Received DriverDTO: {}", driverDTO);
         DriverDTO saveddriver = driverService.saveDriver(driverDTO);
+        logger.info("Saved DriverDTO: {}", saveddriver);
         return ResponseEntity.ok(saveddriver);
     }
 

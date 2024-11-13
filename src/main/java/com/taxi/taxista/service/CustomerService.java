@@ -42,6 +42,7 @@ public class CustomerService {
         Customer existingCustomer = customerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Customer not found: " + id));
         customerMapper.updateEntityFromDTO(updatedCustomerDTO, existingCustomer);
+        existingCustomer.setId(id);
         Customer savedCustomer = customerRepository.save(existingCustomer);
         return customerMapper.toDTO(savedCustomer);
     }

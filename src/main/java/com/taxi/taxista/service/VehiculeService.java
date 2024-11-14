@@ -1,7 +1,9 @@
 package com.taxi.taxista.service;
 
+import com.taxi.taxista.DTO.VehiculeAnalyticsDTO;
 import com.taxi.taxista.DTO.VehiculeDTO;
 import com.taxi.taxista.entity.Vehicule;
+import com.taxi.taxista.entity.enums.VehiculeStatus;
 import com.taxi.taxista.entity.enums.VehiculeType;
 import com.taxi.taxista.exception.VehiculeNotFoundException;
 import com.taxi.taxista.mapper.VehiculeMapper;
@@ -13,7 +15,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -70,4 +74,39 @@ public class VehiculeService {
                 .collect(Collectors.toList());
     }
 
+    public VehiculeAnalyticsDTO getVehiculeAnalytics() {
+        VehiculeAnalyticsDTO analyticsDTO = new VehiculeAnalyticsDTO();
+
+        // Average Mileage by Type
+        Map<VehiculeType, Double> averageMileageByType = new HashMap<>();
+        List<Object[]> averageMileageResults = vehiculeRepository.findAverageMileageByType();
+        for (Object[] result : averageMileageResults) {
+            VehiculeType type = (VehiculeType) result[0];
+            Double averageMileage = (Double) result[1];
+            averageMileageByType.put(type, averageMileage);
+        }
+        analyticsDTO.setAverageMileageByType(averageMileageByType);
+
+        // Utilization Rate by Type
+//        Map<VehiculeType, Double> utilizationRateByType = new HashMap<>();
+//        List<Object[]> utilizationRateResults = vehiculeRepository.findUtilizationRateByType();
+//        for (Object[] result : utilizationRateResults) {
+//            VehiculeType type = (VehiculeType) result[0];
+//            Double utilizationRate = (Double) result[1];
+//            utilizationRateByType.put(type, utilizationRate);
+//        }
+//        analyticsDTO.setUtilizationRateByType(utilizationRateByType);
+
+        // Fleet Status Count
+        Map<VehiculeStatus, Long> fleetStatusCount = new HashMap<>();
+        List<Object[]> fleetStatusResults = vehiculeRepository.countVehiclesByStatus();
+        for (Object[] result : fleetStatusResults) {
+            VehiculeStatus status = (VehiculeStatus) result[0];
+            Long count = (Long) result[1];
+            fleetStatusCount.put(status, count);
+        }
+        analyticsDTO.setFleetStatusCount(fleetStatusCount);
+
+        return analyticsDTO;
+    }
 }

@@ -249,10 +249,10 @@ For questions or feedback, contact the project team:
 
 ---
 - **Name**: Lamiaa Termoussi
-- **GitHub**: [Douaesb](https://github.com/TERMOUSSI-LAMIAA)
+- **GitHub**: [Lamiaa Termoussi](https://github.com/TERMOUSSI-LAMIAA)
 
 ---
 
 - **Name**: Hafsa ELMOATASSIM BILLAH
-- **GitHub**: [Douaesb](https://github.com/HAFSA159 )
+- **GitHub**: [Hafsa ELMOATASSIM BILLAH](https://github.com/HAFSA159 )
 

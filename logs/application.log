@@ -1,1 +1,7 @@
 2024-11-15 09:02:10 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10h19m43s608ms458µs200ns).
+2024-11-15 09:17:59 - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2024-11-15 09:17:59 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2e83930a, started on Thu Nov 14 19:37:55 WEST 2024
+2024-11-15 09:17:59 - Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+2024-11-15 09:17:59 - Stopping beans in phase 2147483647
+2024-11-15 09:17:59 - Bean 'webServerGracefulShutdown' completed its stop procedure
+2024-11-15 09:17:59 - Stopping beans in phase 2147483646

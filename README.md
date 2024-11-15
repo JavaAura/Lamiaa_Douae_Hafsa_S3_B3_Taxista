@@ -245,8 +245,14 @@ Liquibase is used for database migrations with scripts stored in `src/main/resou
 For questions or feedback, contact the project team:
 
 - **Name**: Douae sb
-- **Email**: douaesebti33@gmail.com
 - **GitHub**: [Douaesb](https://github.com/Douaesb)
 
+---
+- **Name**: Lamiaa Termoussi
+- **GitHub**: [Douaesb](https://github.com/TERMOUSSI-LAMIAA)
 
+---
+
+- **Name**: Hafsa ELMOATASSIM BILLAH
+- **GitHub**: [Douaesb](https://github.com/HAFSA159 )
 

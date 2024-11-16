@@ -30,9 +30,9 @@ public class Vehicule {
     private VehiculeStatus status;
 
     @Enumerated(EnumType.STRING)
-    private VehiculeType type;
+        private VehiculeType type;
 
-//    @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    private List<Reservation> reservations;
+    @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Reservation> reservations;
 
 }

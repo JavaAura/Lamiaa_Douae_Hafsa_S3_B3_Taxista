@@ -68,4 +68,17 @@ public class DriverService {
         }
         driverRepository.deleteById(id);
     }
+
+//    public Double getOccupationRate(Long chauffeurId) {
+//        Object[] result = chauffeurRepository.getOccupationRate(chauffeurId);
+//
+//        Double totalInCourse = (Double) result[0];  // Total hours driver was EN_COURSE
+//        Double totalAvailableHours = (Double) result[1];  // Total available hours for the driver
+//
+//        if (totalAvailableHours == 0) {
+//            return 0.0;  // To avoid division by zero if the driver has no available hours
+//        }
+//
+//        return (totalInCourse / totalAvailableHours) * 100;  // Calculate Occupation Rate as percentage
+//    }
 }

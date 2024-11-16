@@ -1,5 +1,6 @@
 package com.taxi.taxista.controller;
 
+import com.taxi.taxista.DTO.VehiculeAnalyticsDTO;
 import com.taxi.taxista.DTO.VehiculeDTO;
 import com.taxi.taxista.entity.enums.VehiculeType;
 import com.taxi.taxista.service.VehiculeService;
@@ -100,5 +101,16 @@ public class VehiculeController {
         List<VehiculeDTO> vehicles = vehiculeService.getVehiculesByType(type);
         return ResponseEntity.ok(vehicles);
     }
+
+    @GetMapping("/analytics")
+    @Operation(summary = "Get vehicle analytics")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Analytics data retrieved successfully")
+    })
+    public ResponseEntity<VehiculeAnalyticsDTO> getVehiculeAnalytics() {
+        VehiculeAnalyticsDTO analytics = vehiculeService.getVehiculeAnalytics();
+        return ResponseEntity.ok(analytics);
+    }
+
 
 }

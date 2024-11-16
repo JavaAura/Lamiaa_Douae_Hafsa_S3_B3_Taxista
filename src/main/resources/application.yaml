@@ -3,3 +3,8 @@
 spring:
   profiles:
     active: dev
+
+
+logging:
+  level:
+    springfox: DEBUG

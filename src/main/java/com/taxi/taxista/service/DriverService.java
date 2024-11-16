@@ -5,6 +5,7 @@ import com.taxi.taxista.entity.Driver;
 import com.taxi.taxista.entity.Reservation;
 import com.taxi.taxista.entity.enums.DriverStatus;
 import com.taxi.taxista.entity.enums.ReservationStatus;
+import com.taxi.taxista.exception.DriverNotFoundException;
 import com.taxi.taxista.mapper.DriverMapper;
 import com.taxi.taxista.repository.DriverRepository;
 import com.taxi.taxista.repository.ReservationRepository;
@@ -48,7 +49,7 @@ public class DriverService {
 
     public DriverDTO updateDriver(Long id, @Valid DriverDTO updatedDriverDTO) {
         Driver existingDriver = driverRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Driver not found: " + id));
+                .orElseThrow(() -> new DriverNotFoundException(id));
         driverMapper.updateEntityFromDTO(updatedDriverDTO, existingDriver);
         existingDriver.setId(id);
         Driver savedDriver = driverRepository.save(existingDriver);
@@ -69,13 +70,13 @@ public class DriverService {
 
     public DriverDTO getDriverById(Long id) {
         Driver driver = driverRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Driver not found: " + id));
+                .orElseThrow(() -> new DriverNotFoundException(id));
         return driverMapper.toDTO(driver);
     }
 
     public void deleteDriver(Long id) {
         if (!driverRepository.existsById(id)) {
-            throw new RuntimeException("Driver not found: " + id);
+            throw new DriverNotFoundException(id);
         }
         driverRepository.deleteById(id);
     }

@@ -5,7 +5,6 @@ import java.util.Map;
 public class ReservationAnalyticsDTO {
     private long totalReservations;
     private Map<String, Long> reservationsByStatus;
-    private Map<String, Long> reservationsByVehiculeType;
 
     // Getters and setters
     public long getTotalReservations() {
@@ -24,11 +23,4 @@ public class ReservationAnalyticsDTO {
         this.reservationsByStatus = reservationsByStatus;
     }
 
-    public Map<String, Long> getReservationsByVehiculeType() {
-        return reservationsByVehiculeType;
-    }
-
-    public void setReservationsByVehiculeType(Map<String, Long> reservationsByVehiculeType) {
-        this.reservationsByVehiculeType = reservationsByVehiculeType;
-    }
 }

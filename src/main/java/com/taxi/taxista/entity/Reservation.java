@@ -39,7 +39,7 @@ public class Reservation {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private ReservationStatus statut;  // CRÉÉE, CONFIRMÉE, TERMINÉE, ANNULÉE
+    private ReservationStatus status;
 
     @Column(nullable = false)
     private double distanceKm;
@@ -65,7 +65,7 @@ public class Reservation {
         dto.setAdresseDepart(reservation.getAdresseDepart());
         dto.setAdresseArrivee(reservation.getAdresseArrivee());
         dto.setPrix(reservation.getPrix());
-        dto.setStatus(reservation.getStatut());
+        dto.setStatus(reservation.getStatus());
         dto.setDistanceKm(reservation.getDistanceKm());
         dto.setDriverId(reservation.getDriver().getId());
         dto.setVehiculeId(reservation.getVehicule().getId());

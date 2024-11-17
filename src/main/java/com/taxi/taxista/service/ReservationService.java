@@ -63,29 +63,18 @@ public class ReservationService {
         reservationRepository.deleteById(id);
     }
 
-    // Analytics logic
     public ReservationAnalyticsDTO getReservationAnalytics() {
         ReservationAnalyticsDTO analytics = new ReservationAnalyticsDTO();
 
-        // Total reservations
         long totalReservations = reservationRepository.count();
         analytics.setTotalReservations(totalReservations);
 
-        // Reservations by status
         Map<String, Long> reservationsByStatus = reservationRepository.findAll().stream()
                 .collect(Collectors.groupingBy(
-                        reservation -> reservation.getStatut().name(), // Assuming `status` is an Enum
+                        reservation -> reservation.getStatut().name(),
                         Collectors.counting()
                 ));
         analytics.setReservationsByStatus(reservationsByStatus);
-
-        // Reservations by vehicle type
-        Map<String, Long> reservationsByVehiculeType = reservationRepository.findAll().stream()
-                .collect(Collectors.groupingBy(
-                        reservation -> reservation.getVehiculeType().name(), // Assuming `vehiculeType` is an Enum
-                        Collectors.counting()
-                ));
-        analytics.setReservationsByVehiculeType(reservationsByVehiculeType);
 
         return analytics;
     }

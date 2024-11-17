@@ -48,7 +48,6 @@ public class ReservationDTO {
     @NotNull(message = "Customer ID is required")
     private Long customerId;
 
-    private VehiculeType vehiculeType;
 
     public static Reservation toEntity(ReservationDTO dto) {
         Reservation reservation = new Reservation();
@@ -60,8 +59,6 @@ public class ReservationDTO {
         reservation.setAdresseArrivee(dto.getAdresseArrivee());
         reservation.setPrix(dto.getPrix());
         reservation.setStatut(dto.getStatus());
-
-        reservation.setVehiculeType(dto.getVehiculeType());
 
         return reservation;
     }

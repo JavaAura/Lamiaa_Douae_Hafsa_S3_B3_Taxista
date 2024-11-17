@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -88,14 +90,44 @@ public class VehiculeService {
         analyticsDTO.setAverageMileageByType(averageMileageByType);
 
         // Utilization Rate by Type
-//        Map<VehiculeType, Double> utilizationRateByType = new HashMap<>();
-//        List<Object[]> utilizationRateResults = vehiculeRepository.findUtilizationRateByType();
-//        for (Object[] result : utilizationRateResults) {
-//            VehiculeType type = (VehiculeType) result[0];
-//            Double utilizationRate = (Double) result[1];
-//            utilizationRateByType.put(type, utilizationRate);
-//        }
-//        analyticsDTO.setUtilizationRateByType(utilizationRateByType);
+        Map<VehiculeType, Double> utilizationRateByType = new HashMap<>();
+
+// Fetch data from the repository
+        List<Object[]> reservationData = vehiculeRepository.fetchVehiculeReservationData();
+
+// Temporary maps to store total time in 'EN_COURSE' and total available time per type
+        Map<VehiculeType, Long> timeInCourseByType = new HashMap<>();
+        Map<VehiculeType, Long> totalTimeByType = new HashMap<>();
+
+        for (Object[] result : reservationData) {
+            VehiculeType type = (VehiculeType) result[0];
+            LocalDateTime start = (LocalDateTime) result[1];
+            LocalDateTime end = (LocalDateTime) result[2];
+            String status = (String) result[3];
+
+            // Calculate the duration of this reservation in minutes
+            long durationInMinutes = Duration.between(start, end).toMinutes();
+
+            // Add to total time for this vehicle type
+            totalTimeByType.put(type, totalTimeByType.getOrDefault(type, 0L) + durationInMinutes);
+
+            // If the reservation is 'EN_COURSE', add to the 'in course' time
+            if ("EN_COURSE".equals(status)) {
+                timeInCourseByType.put(type, timeInCourseByType.getOrDefault(type, 0L) + durationInMinutes);
+            }
+        }
+
+// Calculate utilization rate as a percentage
+        for (VehiculeType type : totalTimeByType.keySet()) {
+            long totalMinutes = totalTimeByType.getOrDefault(type, 0L);
+            long inCourseMinutes = timeInCourseByType.getOrDefault(type, 0L);
+            double utilizationRate = totalMinutes > 0 ? (inCourseMinutes * 100.0) / totalMinutes : 0.0;
+            utilizationRateByType.put(type, utilizationRate);
+        }
+
+// Set the result in the DTO
+        analyticsDTO.setUtilizationRateByType(utilizationRateByType);
+
 
         // Fleet Status Count
         Map<VehiculeStatus, Long> fleetStatusCount = new HashMap<>();

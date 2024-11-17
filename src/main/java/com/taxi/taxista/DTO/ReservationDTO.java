@@ -58,7 +58,7 @@ public class ReservationDTO {
         reservation.setAdresseDepart(dto.getAdresseDepart());
         reservation.setAdresseArrivee(dto.getAdresseArrivee());
         reservation.setPrix(dto.getPrix());
-        reservation.setStatut(dto.getStatus());
+        reservation.setStatus(dto.getStatus());
 
         return reservation;
     }

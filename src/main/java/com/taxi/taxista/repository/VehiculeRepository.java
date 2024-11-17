@@ -22,7 +22,7 @@ public interface VehiculeRepository extends JpaRepository<Vehicule, Long> {
     List<Object[]> countVehiclesByStatus();
 
     // Utilization rate by vehicle type: calculates percentage of time in 'EN_COURSE' status
-    @Query("SELECT v.type, r.heureDebutCourse, r.heureFinCourse, r.statut " +
+    @Query("SELECT v.type, r.heureDebutCourse, r.heureFinCourse, r.status " +
             "FROM Vehicule v JOIN v.reservations r")
     List<Object[]> fetchVehiculeReservationData();
 

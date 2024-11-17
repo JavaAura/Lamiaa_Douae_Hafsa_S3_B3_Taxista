@@ -1,6 +1,8 @@
 package com.taxi.taxista.DTO;
 
+import com.taxi.taxista.entity.Reservation;
 import com.taxi.taxista.entity.enums.ReservationStatus;
+import com.taxi.taxista.entity.enums.VehiculeType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -32,7 +34,10 @@ public class ReservationDTO {
     private double prix;
 
     @NotNull(message = "Reservation status is required")
-    private ReservationStatus statut;
+    private ReservationStatus status;
+
+    @NotNull(message = "Distance is required")
+    private double distanceKm;
 
     @NotNull(message = "Driver ID is required")
     private Long driverId;
@@ -42,4 +47,23 @@ public class ReservationDTO {
 
     @NotNull(message = "Customer ID is required")
     private Long customerId;
+
+    private VehiculeType vehiculeType;
+
+    public static Reservation toEntity(ReservationDTO dto) {
+        Reservation reservation = new Reservation();
+        reservation.setId(dto.getId());
+        reservation.setDateHeure(dto.getDateHeure());
+        reservation.setHeureDebutCourse(dto.getHeureDebutCourse());
+        reservation.setHeureFinCourse(dto.getHeureFinCourse());
+        reservation.setAdresseDepart(dto.getAdresseDepart());
+        reservation.setAdresseArrivee(dto.getAdresseArrivee());
+        reservation.setPrix(dto.getPrix());
+        reservation.setStatut(dto.getStatus());
+
+        reservation.setVehiculeType(dto.getVehiculeType());
+
+        return reservation;
+    }
+
 }

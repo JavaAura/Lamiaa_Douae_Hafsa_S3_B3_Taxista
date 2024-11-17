@@ -1,6 +1,8 @@
 package com.taxi.taxista.entity;
 
+import com.taxi.taxista.DTO.ReservationDTO;
 import com.taxi.taxista.entity.enums.ReservationStatus;
+import com.taxi.taxista.entity.enums.VehiculeType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -37,17 +39,41 @@ public class Reservation {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private ReservationStatus statut;
+    private ReservationStatus statut;  // CRÉÉE, CONFIRMÉE, TERMINÉE, ANNULÉE
+
+    @Column(nullable = false)
+    private double distanceKm;
 
     @ManyToOne
-    @JoinColumn(name = "driver_id", nullable = false)
+    @JoinColumn(name = "driver_id", nullable = true)
     private Driver driver;
 
     @ManyToOne
-    @JoinColumn(name = "vehicle_id", nullable = false)
+    @JoinColumn(name = "vehicle_id", nullable = true)
     private Vehicule vehicule;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "customer_id", nullable = true)
     private Customer customer;
+
+    @Enumerated(EnumType.STRING)
+    private VehiculeType vehiculeType;
+
+    public static ReservationDTO toDto(Reservation reservation) {
+        ReservationDTO dto = new ReservationDTO();
+        dto.setId(reservation.getId());
+        dto.setDateHeure(reservation.getDateHeure());
+        dto.setHeureDebutCourse(reservation.getHeureDebutCourse());
+        dto.setHeureFinCourse(reservation.getHeureFinCourse());
+        dto.setAdresseDepart(reservation.getAdresseDepart());
+        dto.setAdresseArrivee(reservation.getAdresseArrivee());
+        dto.setPrix(reservation.getPrix());
+        dto.setStatus(reservation.getStatut());
+        dto.setDistanceKm(reservation.getDistanceKm());
+        dto.setDriverId(reservation.getDriver().getId());
+        dto.setVehiculeId(reservation.getVehicule().getId());
+        dto.setCustomerId(reservation.getCustomer().getId());
+        dto.setVehiculeType(reservation.getVehiculeType());
+        return dto;
+    }
 }

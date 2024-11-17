@@ -56,9 +56,6 @@ public class Reservation {
     @JoinColumn(name = "customer_id", nullable = true)
     private Customer customer;
 
-    @Enumerated(EnumType.STRING)
-    private VehiculeType vehiculeType;
-
     public static ReservationDTO toDto(Reservation reservation) {
         ReservationDTO dto = new ReservationDTO();
         dto.setId(reservation.getId());
@@ -73,7 +70,6 @@ public class Reservation {
         dto.setDriverId(reservation.getDriver().getId());
         dto.setVehiculeId(reservation.getVehicule().getId());
         dto.setCustomerId(reservation.getCustomer().getId());
-        dto.setVehiculeType(reservation.getVehiculeType());
         return dto;
     }
 }
